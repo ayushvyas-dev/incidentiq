@@ -1,0 +1,9 @@
+# Incident analysis
+
+`POST /api/v1/incidents/analyze` retrieves completed documents matching the incident service and environment, then asks the configured chat model for a typed JSON analysis. If semantic search is configured it uses hybrid retrieval; otherwise it uses PostgreSQL keyword search. No retrieved chunks yields a persisted `insufficient_evidence` result without calling the model.
+
+The API checks every supporting and contradictory quote against a chunk returned by retrieval. It constructs citation sources from those retrieved chunks, marks diagnostic steps `read_only`, and labels hypotheses as unconfirmed. Invalid model output and provider failures mark the analysis run failed and return a sanitized error.
+
+Configure `GROQ_API_KEY` and `GROQ_CHAT_MODEL` for primary generation, and `GEMINI_API_KEY` and `GEMINI_CHAT_MODEL` for fallback. Groq is always primary; Gemini fallback is automatic when configured, and routing decisions record every provider change. Per-request `permitted_providers` can restrict use to Groq when data policy disallows Gemini. Incident descriptions, symptoms, log excerpts, and retrieved document text are sent to the selected provider, so deployment policy must permit that provider.
+
+`ROUTING_POLICY` supports `static` and `rule_based`. Static selects Groq; rule-based selects among providers allowed by policy and budgets. Retry count, timeout, and circuit-breaker settings are configurable. Optional cost and latency estimates are configured per provider; simulation returns null estimates when missing. Estimates are operator-supplied values, not live quotes. Routing state and the decision, retries, fallback, and sanitized error codes are stored on each analysis run. Health state is process-local and resets on restart. The provider APIs and free-tier model availability have not been live-verified in this offline environment.

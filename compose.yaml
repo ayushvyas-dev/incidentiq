@@ -1,0 +1,40 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: ./backend
+    restart: unless-stopped
+    env_file: ./backend/.env
+    environment:
+      REDIS_URL: ${COMPOSE_REDIS_URL:-redis://redis:6379/0}
+      EVALUATION_DATASET_DIR: /app/datasets
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/health/ready', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  worker:
+    build: ./backend
+    restart: on-failure
+    env_file: ./backend/.env
+    environment:
+      REDIS_URL: ${COMPOSE_REDIS_URL:-redis://redis:6379/0}
+      EVALUATION_DATASET_DIR: /app/datasets
+    command: ["arq", "incidentiq.workers.queue.WorkerSettings"]
+    depends_on:
+      redis:
+        condition: service_healthy

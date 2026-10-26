@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root { color-scheme: light; --bg: #fafafa; --panel: #fff; --ink: #171717; --muted: #737373; --line: #e5e5e5; --soft: #f5f5f5; --accent: #2563eb; --green: #16834b; --amber: #b45309; --red: #dc2626; }
+@media (prefers-color-scheme: dark) { :root { color-scheme: dark; --bg: #0a0a0a; --panel: #111; --ink: #ededed; --muted: #a3a3a3; --line: #262626; --soft: #171717; --accent: #60a5fa; --green: #55c98a; --amber: #fbbf24; --red: #f87171; } }
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; font-size: 14px; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+::selection { background: color-mix(in srgb, var(--accent) 20%, transparent); color: var(--ink); }
+.surface { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+.field { width: 100%; min-height: 38px; background: var(--panel); border: 1px solid var(--line); color: var(--ink); border-radius: 6px; padding: 8px 11px; outline: none; }
+.field.search-query-field { padding-left: 40px; }
+.field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.btn { min-height: 38px; padding: 8px 13px; display: inline-flex; gap: 8px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--panel); font-weight: 550; font-size: 13px; cursor: pointer; }
+.btn:hover:not(:disabled) { background: var(--soft); }
+.btn:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:disabled { cursor: not-allowed; opacity: .55; }
+.btn-primary { color: white; background: #2563eb; border-color: #2563eb; }
+.btn-primary:hover:not(:disabled) { background: #1d4ed8; }
+@media (prefers-color-scheme: dark) { .btn-primary { color: #fff; background: #2563eb; border-color: #2563eb; } .btn-primary:hover:not(:disabled) { background: #3b82f6; } }
+summary { cursor: pointer; }
+pre, code, .font-mono { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

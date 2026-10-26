@@ -1,0 +1,15 @@
+{
+  "title": "Checkout database acquisition timeouts",
+  "description": "Acquisition timeouts increased after a software release.",
+  "service": "checkout",
+  "environment": "production",
+  "severity": "SEV-2",
+  "symptoms": [
+    "Database connection acquisition latency increased",
+    "Checkout request failures increased after deployment"
+  ],
+  "options": {
+    "top_k": 5,
+    "include_diagnostic_steps": true
+  }
+}

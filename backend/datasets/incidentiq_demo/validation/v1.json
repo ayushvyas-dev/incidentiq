@@ -1,0 +1,33 @@
+{
+  "dataset_id": "incidentiq_demo",
+  "version": "1.0.0",
+  "split": "validation",
+  "cases": [
+    {
+      "case_id": "connection_pool_saturation",
+      "incident": {
+        "title": "Checkout database acquisition timeouts",
+        "description": "Acquisition timeouts increased after a release.",
+        "service": "checkout",
+        "environment": "production",
+        "severity": "SEV-2"
+      },
+      "expected_relevant_sources": ["connection-pool.md"],
+      "expected_facts": ["inspect connection pool saturation"],
+      "should_abstain": false
+    },
+    {
+      "case_id": "unknown_dependency_failure",
+      "incident": {
+        "title": "Unknown dependency failure",
+        "description": "Request failed without diagnostic signal.",
+        "service": "checkout",
+        "environment": "production",
+        "severity": "unknown"
+      },
+      "expected_relevant_sources": [],
+      "expected_facts": [],
+      "should_abstain": true
+    }
+  ]
+}

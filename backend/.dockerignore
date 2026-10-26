@@ -1,0 +1,33 @@
+# Secrets and local environment files
+.env
+.env.*
+
+# Git and local Python environments
+.git/
+.venv/
+venv/
+env/
+
+# Python caches and generated files
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Tests are not needed in the runtime image
+tests/
+
+# Frontend is deployed separately
+frontend/
+
+# Local tooling output
+graphify-out/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,20 @@
+{
+  "dataset_id": "incidentiq_demo",
+  "version": "1.0.0",
+  "split": "holdout",
+  "cases": [
+    {
+      "case_id": "missing_cache_evidence",
+      "incident": {
+        "title": "Cache latency increase",
+        "description": "Cache requests slowed, but no cache metrics or logs are available.",
+        "service": "catalog",
+        "environment": "production",
+        "severity": "SEV-3"
+      },
+      "expected_relevant_sources": [],
+      "expected_facts": [],
+      "should_abstain": true
+    }
+  ]
+}

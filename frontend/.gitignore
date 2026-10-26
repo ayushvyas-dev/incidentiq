@@ -1,0 +1,27 @@
+
+# Dependencies
+node_modules/
+
+# Next.js generated files
+.next/
+out/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Playwright generated output
+test-results/
+playwright-report/
+playwright/.cache/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
