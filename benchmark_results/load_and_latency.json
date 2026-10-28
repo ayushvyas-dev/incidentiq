@@ -1,0 +1,371 @@
+{
+  "timestamp": "2026-10-28T17:32:33.495295+00:00",
+  "commit_sha": "7a9047cde4cc285377c52bc11ba4cbf759578f14",
+  "environment": {
+    "os": "Linux 6.17 (x86_64)",
+    "python_version": "3.12.14",
+    "framework": "FastAPI 0.115 + Uvicorn / ASGITransport",
+    "database": "SQLite StaticPool (reproducible zero-network baseline)",
+    "llm_gateway_policy": "FastMock for high concurrency load; real Groq gpt-oss-20b for real-provider test"
+  },
+  "discrete_load_levels": {
+    "concurrency_10": {
+      "concurrency": 10,
+      "runs": [
+        {
+          "concurrency": 10,
+          "total_requests": 1000,
+          "duration_seconds": 13.529,
+          "throughput_rps": 73.91,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "latency_ms": {
+            "min": 12.69,
+            "p50": 61.99,
+            "p90": 96.4,
+            "p95": 153.11,
+            "p99": 1611.19,
+            "max": 5827.62,
+            "mean": 127.82,
+            "stddev": 449.35
+          },
+          "memory_mb": {
+            "before": 133.6,
+            "after": 153.5,
+            "delta": 19.9
+          },
+          "cpu_load": 0.39
+        },
+        {
+          "concurrency": 10,
+          "total_requests": 1000,
+          "duration_seconds": 13.454,
+          "throughput_rps": 74.32,
+          "errors": 0,
+          "error_rate_pct": 0.0,
+          "latency_ms": {
+            "min": 12.97,
+            "p50": 61.93,
+            "p90": 112.47,
+            "p95": 985.51,
+            "p99": 1453.3,
+            "max": 2071.27,
+            "mean": 128.39,
+            "stddev": 271.71
+          },
+          "memory_mb": {
+            "before": 153.5,
+            "after": 154.14,
+            "delta": 0.64
+          },
+          "cpu_load": 0.46
+        },
+        {
+          "concurrency": 10,
+          "total_requests": 1000,
+          "duration_seconds": 12.556,
+          "throughput_rps": 79.64,
+          "errors": 59,
+          "error_rate_pct": 5.9,
+          "latency_ms": {
+            "min": 10.29,
+            "p50": 61.07,
+            "p90": 159.22,
+            "p95": 641.53,
+            "p99": 1263.11,
+            "max": 1799.31,
+            "mean": 123.45,
+            "stddev": 225.74
+          },
+          "memory_mb": {
+            "before": 154.14,
+            "after": 156.59,
+            "delta": 2.45
+          },
+          "cpu_load": 0.65
+        }
+      ],
+      "aggregate": {
+        "mean_throughput_rps": 75.96,
+        "mean_latency_p50_ms": 61.66,
+        "mean_latency_p95_ms": 593.38,
+        "mean_latency_p99_ms": 1442.53,
+        "mean_errors": 19.67,
+        "mean_error_rate_pct": 1.967
+      }
+    },
+    "concurrency_25": {
+      "concurrency": 25,
+      "runs": [
+        {
+          "concurrency": 25,
+          "total_requests": 1000,
+          "duration_seconds": 14.803,
+          "throughput_rps": 67.55,
+          "errors": 87,
+          "error_rate_pct": 8.7,
+          "latency_ms": {
+            "min": 20.37,
+            "p50": 162.3,
+            "p90": 614.04,
+            "p95": 1385.73,
+            "p99": 3750.18,
+            "max": 7097.51,
+            "mean": 334.6,
+            "stddev": 663.33
+          },
+          "memory_mb": {
+            "before": 156.59,
+            "after": 166.57,
+            "delta": 9.98
+          },
+          "cpu_load": 0.65
+        },
+        {
+          "concurrency": 25,
+          "total_requests": 1000,
+          "duration_seconds": 15.156,
+          "throughput_rps": 65.98,
+          "errors": 29,
+          "error_rate_pct": 2.9,
+          "latency_ms": {
+            "min": 19.84,
+            "p50": 182.41,
+            "p90": 535.75,
+            "p95": 1688.77,
+            "p99": 3599.25,
+            "max": 7337.76,
+            "mean": 359.93,
+            "stddev": 669.83
+          },
+          "memory_mb": {
+            "before": 166.57,
+            "after": 167.88,
+            "delta": 1.31
+          },
+          "cpu_load": 1.02
+        },
+        {
+          "concurrency": 25,
+          "total_requests": 1000,
+          "duration_seconds": 15.581,
+          "throughput_rps": 64.18,
+          "errors": 40,
+          "error_rate_pct": 4.0,
+          "latency_ms": {
+            "min": 22.14,
+            "p50": 164.59,
+            "p90": 946.62,
+            "p95": 1571.06,
+            "p99": 3361.01,
+            "max": 7761.17,
+            "mean": 368.92,
+            "stddev": 668.6
+          },
+          "memory_mb": {
+            "before": 167.88,
+            "after": 168.98,
+            "delta": 1.1
+          },
+          "cpu_load": 2.58
+        }
+      ],
+      "aggregate": {
+        "mean_throughput_rps": 65.9,
+        "mean_latency_p50_ms": 169.77,
+        "mean_latency_p95_ms": 1548.52,
+        "mean_latency_p99_ms": 3570.15,
+        "mean_errors": 52.0,
+        "mean_error_rate_pct": 5.2
+      }
+    },
+    "concurrency_50": {
+      "concurrency": 50,
+      "runs": [
+        {
+          "concurrency": 50,
+          "total_requests": 1000,
+          "duration_seconds": 15.477,
+          "throughput_rps": 64.61,
+          "errors": 83,
+          "error_rate_pct": 8.3,
+          "latency_ms": {
+            "min": 89.37,
+            "p50": 342.47,
+            "p90": 1205.08,
+            "p95": 2643.42,
+            "p99": 7776.13,
+            "max": 14943.94,
+            "mean": 727.21,
+            "stddev": 1411.86
+          },
+          "memory_mb": {
+            "before": 168.98,
+            "after": 182.18,
+            "delta": 13.2
+          },
+          "cpu_load": 2.43
+        },
+        {
+          "concurrency": 50,
+          "total_requests": 1000,
+          "duration_seconds": 15.279,
+          "throughput_rps": 65.45,
+          "errors": 61,
+          "error_rate_pct": 6.1,
+          "latency_ms": {
+            "min": 119.53,
+            "p50": 330.24,
+            "p90": 1199.96,
+            "p95": 2844.85,
+            "p99": 7445.91,
+            "max": 14080.8,
+            "mean": 696.97,
+            "stddev": 1343.63
+          },
+          "memory_mb": {
+            "before": 182.18,
+            "after": 184.63,
+            "delta": 2.45
+          },
+          "cpu_load": 2.69
+        },
+        {
+          "concurrency": 50,
+          "total_requests": 1000,
+          "duration_seconds": 14.529,
+          "throughput_rps": 68.83,
+          "errors": 64,
+          "error_rate_pct": 6.4,
+          "latency_ms": {
+            "min": 110.2,
+            "p50": 334.26,
+            "p90": 1111.91,
+            "p95": 2724.42,
+            "p99": 8361.41,
+            "max": 14513.5,
+            "mean": 682.88,
+            "stddev": 1353.81
+          },
+          "memory_mb": {
+            "before": 184.63,
+            "after": 185.49,
+            "delta": 0.86
+          },
+          "cpu_load": 2.55
+        }
+      ],
+      "aggregate": {
+        "mean_throughput_rps": 66.3,
+        "mean_latency_p50_ms": 335.66,
+        "mean_latency_p95_ms": 2737.56,
+        "mean_latency_p99_ms": 7861.15,
+        "mean_errors": 69.33,
+        "mean_error_rate_pct": 6.933
+      }
+    }
+  },
+  "sustained_load_test": {
+    "concurrency": 25,
+    "target_duration_seconds": 600,
+    "actual_duration_seconds": 600.2,
+    "total_requests": 41350,
+    "throughput_rps": 68.89,
+    "errors": 0,
+    "error_rate_pct": 0.0,
+    "latency_ms": {
+      "min": 96.09,
+      "p50": 341.28,
+      "p90": 439.79,
+      "p95": 471.28,
+      "p99": 527.15,
+      "max": 632.23,
+      "mean": 348.66
+    },
+    "memory_mb": {
+      "before": 185.49,
+      "after": 193.16,
+      "delta": 7.67
+    },
+    "checkpoints": [
+      {
+        "elapsed_seconds": 60,
+        "requests": 4222,
+        "rps": 70.4,
+        "memory_mb": 184.63
+      },
+      {
+        "elapsed_seconds": 120,
+        "requests": 8406,
+        "rps": 70.0,
+        "memory_mb": 184.9
+      },
+      {
+        "elapsed_seconds": 180,
+        "requests": 12523,
+        "rps": 69.6,
+        "memory_mb": 185.97
+      },
+      {
+        "elapsed_seconds": 240,
+        "requests": 16614,
+        "rps": 69.2,
+        "memory_mb": 186.92
+      },
+      {
+        "elapsed_seconds": 300,
+        "requests": 20758,
+        "rps": 69.2,
+        "memory_mb": 188.0
+      },
+      {
+        "elapsed_seconds": 360,
+        "requests": 24866,
+        "rps": 69.1,
+        "memory_mb": 189.08
+      },
+      {
+        "elapsed_seconds": 420,
+        "requests": 28976,
+        "rps": 69.0,
+        "memory_mb": 190.03
+      },
+      {
+        "elapsed_seconds": 480,
+        "requests": 33086,
+        "rps": 68.9,
+        "memory_mb": 191.07
+      },
+      {
+        "elapsed_seconds": 540,
+        "requests": 37215,
+        "rps": 68.9,
+        "memory_mb": 192.17
+      },
+      {
+        "elapsed_seconds": 600,
+        "requests": 41325,
+        "rps": 68.9,
+        "memory_mb": 193.13
+      }
+    ]
+  },
+  "real_provider_benchmark": {
+    "requests_attempted": 10,
+    "requests_successful": 10,
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "latency_ms": {
+      "p50": 14869.1,
+      "p95": 35759.3,
+      "mean": 16885.2
+    },
+    "tokens": {
+      "mean_input_tokens": 134.0,
+      "mean_output_tokens": 149.9
+    },
+    "cost": {
+      "mean_cost_usd": 0.0
+    }
+  }
+}

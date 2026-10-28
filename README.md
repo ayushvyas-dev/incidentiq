@@ -28,6 +28,7 @@ IncidentIQ is strictly a **decision-support system**: it produces grounded diagn
   - [Running Tests & Quality Checks](#running-tests--quality-checks)
 - [Demo Walkthrough](#demo-walkthrough)
 - [API & Operational Endpoints](#api--operational-endpoints)
+- [Benchmark & Reliability Reports](#benchmark--reliability-reports)
 - [Trade-offs & Limitations](#trade-offs--limitations)
 
 ---
@@ -537,6 +538,23 @@ All `/api/v1/*` routes and `/metrics` require `Authorization: Bearer <token>`. T
 | `POST`| `/api/v1/routing/simulate` | Simulate model routing without calling LLM | Bearer (Read) |
 | `GET` | `/api/v1/metrics/summary` | Aggregated operational metrics (`1h`, `24h`, `7d`) | Bearer (Read) |
 | `GET` | `/metrics` | Prometheus exposition endpoint | Bearer (Read) |
+
+---
+
+## Benchmark & Reliability Reports
+
+Comprehensive, reproducible benchmark reports evaluated across a versioned 200-case dataset, high-concurrency traffic, chaos fault injection, and ingestion stress tests:
+
+| Report | Focus Area | Key Measured Result |
+| :--- | :--- | :--- |
+| **[Executive Summary](docs/reports/executive_summary.md)** | Overall System Scorecard | Complete synthesis of quality, latency, capacity, and resilience |
+| **[RAG Quality Evaluation](docs/reports/rag_evaluation.md)** | Retrieval & Answer Grounding | **Recall@5: 0.9831**, HitRate: 1.0, MRR: 1.0, **100% Abstention Accuracy** |
+| **[Retrieval Comparison](docs/reports/retrieval_comparison.md)** | Keyword vs Semantic vs Hybrid | RRF $k=60$ hybrid search provides zero-regression ranking resilience |
+| **[Load, Latency & Capacity](docs/reports/load_and_latency.md)** | Concurrency & Sustained Stress | **68.89 RPS** sustained over 10 min (41,350 reqs), **0 errors**, +7.67 MB RSS |
+| **[Failure Injection & Chaos](docs/reports/failure_injection.md)** | Fault Tolerance & Fallbacks | **100% safe pass** across 50 trials (timeouts, dual outages, DB/vector faults) |
+| **[Ingestion Reliability](docs/reports/ingestion_reliability.md)** | Multi-format Stress Pipeline | **100/100 jobs verified** across MD, TXT, PDF, JSONL and failure cases |
+
+*Raw benchmark artifacts and reproduction scripts live in `backend/benchmark_results/` and `backend/scripts/`.*
 
 ---
 

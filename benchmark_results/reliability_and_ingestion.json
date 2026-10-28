@@ -1,0 +1,1530 @@
+{
+  "timestamp": "2026-10-28T17:19:14.279660+00:00",
+  "commit_sha": "7a9047cde4cc285377c52bc11ba4cbf759578f14",
+  "environment": {
+    "os": "Linux 6.17 (x86_64)",
+    "python_version": "3.12.14",
+    "pymupdf_version": "1.28.2"
+  },
+  "failure_injection_scenarios": {
+    "scenario_1_provider_timeout": {
+      "scenario": "provider_timeout_and_fallback",
+      "repetitions": 10,
+      "success_count": 10,
+      "success_rate_pct": 100.0,
+      "results": [
+        {
+          "repetition": 1,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 2.22,
+          "success": true
+        },
+        {
+          "repetition": 2,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.87,
+          "success": true
+        },
+        {
+          "repetition": 3,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.83,
+          "success": true
+        },
+        {
+          "repetition": 4,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.79,
+          "success": true
+        },
+        {
+          "repetition": 5,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 1.1,
+          "success": true
+        },
+        {
+          "repetition": 6,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.81,
+          "success": true
+        },
+        {
+          "repetition": 7,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.79,
+          "success": true
+        },
+        {
+          "repetition": 8,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.95,
+          "success": true
+        },
+        {
+          "repetition": 9,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.78,
+          "success": true
+        },
+        {
+          "repetition": 10,
+          "primary_calls": 2,
+          "fallback_calls": 1,
+          "selected_provider": "gemini",
+          "fallback_used": true,
+          "attempts": 3,
+          "elapsed_ms": 0.89,
+          "success": true
+        }
+      ]
+    },
+    "scenario_2_dual_failure": {
+      "scenario": "dual_provider_failure",
+      "repetitions": 10,
+      "success_count": 10,
+      "success_rate_pct": 100.0,
+      "results": [
+        {
+          "repetition": 1,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 1.06,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 2,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.93,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 3,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.69,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 4,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.71,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 5,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.75,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 6,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.73,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 7,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.71,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 8,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.93,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 9,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.65,
+          "safe_fail_closed": true
+        },
+        {
+          "repetition": 10,
+          "caught_routing_error": true,
+          "error_type": "RoutingError",
+          "primary_calls": 1,
+          "fallback_calls": 1,
+          "fallback_used": true,
+          "elapsed_ms": 0.67,
+          "safe_fail_closed": true
+        }
+      ]
+    },
+    "scenario_3_database_error": {
+      "scenario": "database_error_resilience",
+      "repetitions": 10,
+      "success_count": 10,
+      "success_rate_pct": 100.0,
+      "results": [
+        {
+          "repetition": 1,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.69,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 2,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.13,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 3,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.1,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 4,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.09,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 5,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.09,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 6,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.1,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 7,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.1,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 8,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.08,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 9,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.11,
+          "fail_closed_safe": true
+        },
+        {
+          "repetition": 10,
+          "caught_exception": true,
+          "error_message": "Database connection pool exhausted: timeout acquiring connection",
+          "elapsed_ms": 0.1,
+          "fail_closed_safe": true
+        }
+      ]
+    },
+    "scenario_4_vector_store_outage": {
+      "scenario": "vector_store_outage",
+      "repetitions": 10,
+      "success_count": 10,
+      "success_rate_pct": 100.0,
+      "results": [
+        {
+          "repetition": 1,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.11,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 2,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.09,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 3,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.09,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 4,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.09,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 5,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.08,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 6,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.07,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 7,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.07,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 8,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.06,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 9,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.06,
+          "sanitized_graceful": true
+        },
+        {
+          "repetition": 10,
+          "caught_search_provider_error": true,
+          "elapsed_ms": 0.06,
+          "sanitized_graceful": true
+        }
+      ]
+    },
+    "scenario_5_indexing_retries": {
+      "scenario": "indexing_retries_and_recovery",
+      "repetitions": 10,
+      "success_count": 10,
+      "success_rate_pct": 100.0,
+      "results": [
+        {
+          "repetition": 1,
+          "test_type": "transient_recovery",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "completed",
+          "final_error_code": null,
+          "state_consistent": true
+        },
+        {
+          "repetition": 2,
+          "test_type": "transient_recovery",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "completed",
+          "final_error_code": null,
+          "state_consistent": true
+        },
+        {
+          "repetition": 3,
+          "test_type": "transient_recovery",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "completed",
+          "final_error_code": null,
+          "state_consistent": true
+        },
+        {
+          "repetition": 4,
+          "test_type": "transient_recovery",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "completed",
+          "final_error_code": null,
+          "state_consistent": true
+        },
+        {
+          "repetition": 5,
+          "test_type": "transient_recovery",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "completed",
+          "final_error_code": null,
+          "state_consistent": true
+        },
+        {
+          "repetition": 6,
+          "test_type": "exhausted_failure",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "failed",
+          "final_error_code": "RATE_LIMITED",
+          "state_consistent": true
+        },
+        {
+          "repetition": 7,
+          "test_type": "exhausted_failure",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "failed",
+          "final_error_code": "RATE_LIMITED",
+          "state_consistent": true
+        },
+        {
+          "repetition": 8,
+          "test_type": "exhausted_failure",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "failed",
+          "final_error_code": "RATE_LIMITED",
+          "state_consistent": true
+        },
+        {
+          "repetition": 9,
+          "test_type": "exhausted_failure",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "failed",
+          "final_error_code": "RATE_LIMITED",
+          "state_consistent": true
+        },
+        {
+          "repetition": 10,
+          "test_type": "exhausted_failure",
+          "attempts_called": 3,
+          "sleep_intervals": [
+            0.25,
+            0.5
+          ],
+          "final_job_status": "failed",
+          "final_error_code": "RATE_LIMITED",
+          "state_consistent": true
+        }
+      ]
+    }
+  },
+  "ingestion_reliability_100_jobs": {
+    "total_jobs": 100,
+    "completed_count": 90,
+    "failed_or_rejected_count": 10,
+    "format_breakdown": {
+      "markdown_valid": 30,
+      "plain_text_valid": 25,
+      "pdf_valid": 20,
+      "jsonl_valid": 15,
+      "expected_failure_cases": 10
+    },
+    "latency_ms": {
+      "min": 0.0,
+      "p50": 0.01,
+      "p90": 2.25,
+      "p95": 2.63,
+      "p99": 7.83,
+      "max": 7.83,
+      "mean": 0.56
+    },
+    "failure_code_counts": {
+      "INVALID_DOCUMENT": 6,
+      "FILE_TOO_LARGE": 2,
+      "EMPTY_DOCUMENT": 0,
+      "UNSUPPORTED_MEDIA_TYPE": 2
+    },
+    "jobs": [
+      {
+        "job_id": "job_md_01",
+        "filename": "runbook_01.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.03,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_02",
+        "filename": "runbook_02.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_03",
+        "filename": "runbook_03.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_04",
+        "filename": "runbook_04.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_05",
+        "filename": "runbook_05.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_06",
+        "filename": "runbook_06.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_07",
+        "filename": "runbook_07.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_08",
+        "filename": "runbook_08.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_09",
+        "filename": "runbook_09.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_10",
+        "filename": "runbook_10.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_11",
+        "filename": "runbook_11.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_12",
+        "filename": "runbook_12.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_13",
+        "filename": "runbook_13.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_14",
+        "filename": "runbook_14.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_15",
+        "filename": "runbook_15.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_16",
+        "filename": "runbook_16.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_17",
+        "filename": "runbook_17.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_18",
+        "filename": "runbook_18.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_19",
+        "filename": "runbook_19.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_20",
+        "filename": "runbook_20.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_21",
+        "filename": "runbook_21.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_22",
+        "filename": "runbook_22.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_23",
+        "filename": "runbook_23.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_24",
+        "filename": "runbook_24.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_25",
+        "filename": "runbook_25.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_26",
+        "filename": "runbook_26.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_27",
+        "filename": "runbook_27.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_28",
+        "filename": "runbook_28.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_29",
+        "filename": "runbook_29.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_md_30",
+        "filename": "runbook_30.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 120,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_01",
+        "filename": "postmortem_01.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_02",
+        "filename": "postmortem_02.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_03",
+        "filename": "postmortem_03.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_04",
+        "filename": "postmortem_04.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_05",
+        "filename": "postmortem_05.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_06",
+        "filename": "postmortem_06.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_07",
+        "filename": "postmortem_07.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_08",
+        "filename": "postmortem_08.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_09",
+        "filename": "postmortem_09.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_10",
+        "filename": "postmortem_10.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_11",
+        "filename": "postmortem_11.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_12",
+        "filename": "postmortem_12.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_13",
+        "filename": "postmortem_13.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_14",
+        "filename": "postmortem_14.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_15",
+        "filename": "postmortem_15.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_16",
+        "filename": "postmortem_16.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_17",
+        "filename": "postmortem_17.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_18",
+        "filename": "postmortem_18.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_19",
+        "filename": "postmortem_19.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_20",
+        "filename": "postmortem_20.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_21",
+        "filename": "postmortem_21.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_22",
+        "filename": "postmortem_22.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_23",
+        "filename": "postmortem_23.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_24",
+        "filename": "postmortem_24.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_txt_25",
+        "filename": "postmortem_25.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 107,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.01,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_01",
+        "filename": "architecture_guide_01.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 7.83,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_02",
+        "filename": "architecture_guide_02.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.24,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_03",
+        "filename": "architecture_guide_03.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.18,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_04",
+        "filename": "architecture_guide_04.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.18,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_05",
+        "filename": "architecture_guide_05.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.78,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_06",
+        "filename": "architecture_guide_06.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 3.09,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_07",
+        "filename": "architecture_guide_07.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.25,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_08",
+        "filename": "architecture_guide_08.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 923,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 3.04,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_09",
+        "filename": "architecture_guide_09.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.23,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_10",
+        "filename": "architecture_guide_10.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.18,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_11",
+        "filename": "architecture_guide_11.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.63,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_12",
+        "filename": "architecture_guide_12.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.38,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_13",
+        "filename": "architecture_guide_13.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.19,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_14",
+        "filename": "architecture_guide_14.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.19,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_15",
+        "filename": "architecture_guide_15.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.21,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_16",
+        "filename": "architecture_guide_16.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.19,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_17",
+        "filename": "architecture_guide_17.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.3,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_18",
+        "filename": "architecture_guide_18.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.23,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_19",
+        "filename": "architecture_guide_19.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.34,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_pdf_20",
+        "filename": "architecture_guide_20.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 922,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 2.25,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_01",
+        "filename": "audit_events_01.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.08,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_02",
+        "filename": "audit_events_02.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_03",
+        "filename": "audit_events_03.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_04",
+        "filename": "audit_events_04.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_05",
+        "filename": "audit_events_05.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_06",
+        "filename": "audit_events_06.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_07",
+        "filename": "audit_events_07.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.03,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_08",
+        "filename": "audit_events_08.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_09",
+        "filename": "audit_events_09.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_10",
+        "filename": "audit_events_10.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_11",
+        "filename": "audit_events_11.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_12",
+        "filename": "audit_events_12.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_13",
+        "filename": "audit_events_13.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_14",
+        "filename": "audit_events_14.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_jsonl_15",
+        "filename": "audit_events_15.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 156,
+        "status": "completed",
+        "error_code": null,
+        "latency_ms": 0.02,
+        "expected_outcome": "success"
+      },
+      {
+        "job_id": "job_fail_corrupt_pdf_1",
+        "filename": "corrupt_1.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 56,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 1.62,
+        "expected_outcome": "error_corrupted_pdf"
+      },
+      {
+        "job_id": "job_fail_corrupt_pdf_2",
+        "filename": "corrupt_2.pdf",
+        "mime_type": "application/pdf",
+        "size_bytes": 37,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 0.01,
+        "expected_outcome": "error_corrupted_pdf"
+      },
+      {
+        "job_id": "job_fail_malformed_jsonl_1",
+        "filename": "bad_events_1.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 37,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 0.07,
+        "expected_outcome": "error_malformed_jsonl"
+      },
+      {
+        "job_id": "job_fail_malformed_jsonl_2",
+        "filename": "bad_events_2.jsonl",
+        "mime_type": "application/x-ndjson",
+        "size_bytes": 30,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 0.03,
+        "expected_outcome": "error_malformed_jsonl"
+      },
+      {
+        "job_id": "job_fail_oversized_1",
+        "filename": "huge_dump_1.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 11534336,
+        "status": "failed",
+        "error_code": "FILE_TOO_LARGE",
+        "latency_ms": 0.0,
+        "expected_outcome": "error_oversized"
+      },
+      {
+        "job_id": "job_fail_oversized_2",
+        "filename": "huge_dump_2.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 11534346,
+        "status": "failed",
+        "error_code": "FILE_TOO_LARGE",
+        "latency_ms": 0.0,
+        "expected_outcome": "error_oversized"
+      },
+      {
+        "job_id": "job_fail_empty_1",
+        "filename": "empty_file.txt",
+        "mime_type": "text/plain",
+        "size_bytes": 0,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 0.0,
+        "expected_outcome": "error_empty"
+      },
+      {
+        "job_id": "job_fail_empty_2",
+        "filename": "whitespace_file.md",
+        "mime_type": "text/markdown",
+        "size_bytes": 10,
+        "status": "failed",
+        "error_code": "INVALID_DOCUMENT",
+        "latency_ms": 0.01,
+        "expected_outcome": "error_empty"
+      },
+      {
+        "job_id": "job_fail_unsupported_mime_1",
+        "filename": "binary_payload.exe",
+        "mime_type": "application/octet-stream",
+        "size_bytes": 8,
+        "status": "failed",
+        "error_code": "UNSUPPORTED_MEDIA_TYPE",
+        "latency_ms": 0.0,
+        "expected_outcome": "error_unsupported_mime"
+      },
+      {
+        "job_id": "job_fail_unsupported_mime_2",
+        "filename": "archive.zip",
+        "mime_type": "application/zip",
+        "size_bytes": 8,
+        "status": "failed",
+        "error_code": "UNSUPPORTED_MEDIA_TYPE",
+        "latency_ms": 0.0,
+        "expected_outcome": "error_unsupported_mime"
+      }
+    ]
+  }
+}

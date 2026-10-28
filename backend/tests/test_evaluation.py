@@ -108,7 +108,50 @@ def test_aggregate_metrics_and_baseline_regression_gate():
     assert comparison["passed"] is None
 
 
-def test_evaluation_api_queues_run_and_worker_persists_case_metrics():
+def test_evaluation_api_queues_run_and_worker_persists_case_metrics(tmp_path, monkeypatch):
+    test_dataset_dir = tmp_path / "datasets"
+    val_dir = test_dataset_dir / "test_demo" / "validation"
+    val_dir.mkdir(parents=True)
+    (val_dir / "v1.json").write_text(
+        json.dumps(
+            {
+                "dataset_id": "test_demo",
+                "version": "1.0.0",
+                "split": "validation",
+                "cases": [
+                    {
+                        "case_id": "connection_pool_saturation",
+                        "incident": {
+                            "title": "Checkout database acquisition timeouts",
+                            "description": "Acquisition timeouts increased after a release.",
+                            "service": "checkout",
+                            "environment": "production",
+                            "severity": "SEV-2",
+                        },
+                        "expected_relevant_sources": ["connection-pool.md"],
+                        "expected_facts": ["inspect connection pool saturation"],
+                        "should_abstain": False,
+                    },
+                    {
+                        "case_id": "unknown_dependency_failure",
+                        "incident": {
+                            "title": "Unknown dependency failure",
+                            "description": "Request failed without diagnostic signal.",
+                            "service": "checkout",
+                            "environment": "production",
+                            "severity": "unknown",
+                        },
+                        "expected_relevant_sources": [],
+                        "expected_facts": [],
+                        "should_abstain": True,
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("EVALUATION_DATASET_DIR", str(test_dataset_dir))
+
     engine = create_engine(
         "sqlite+pysqlite:///:memory:",
         connect_args={"check_same_thread": False},
@@ -196,7 +239,7 @@ def test_evaluation_api_queues_run_and_worker_persists_case_metrics():
     response = client.post(
         "/api/v1/evaluations",
         json={
-            "dataset_id": "incidentiq_demo",
+            "dataset_id": "test_demo",
             "split": "validation",
             "experiment_name": "baseline",
             "config": {"retrieval_mode": "keyword"},
@@ -210,7 +253,7 @@ def test_evaluation_api_queues_run_and_worker_persists_case_metrics():
         factory,
         UUID(body["evaluation_run_id"]),
         UUID(body["job_id"]),
-        dataset_dir=DATASETS,
+        dataset_dir=test_dataset_dir,
         embedding_provider=None,
         vector_store=None,
         chat_gateway=gateway,
