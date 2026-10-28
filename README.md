@@ -307,7 +307,7 @@ cp backend/.env.example backend/.env
 | `GROQ_API_KEY` | Groq API key for primary LLM generation | `gsk_...` |
 | `GROQ_CHAT_MODEL` | Groq model identifier | `openai/gpt-oss-20b` |
 | `GEMINI_API_KEY` | Google Gemini API key for embeddings & fallback chat | `AQ....` |
-| `GEMINI_CHAT_MODEL` | Gemini fallback model identifier | `gemini-2.5-flash` |
+| `GEMINI_CHAT_MODEL` | Gemini fallback model identifier | `gemini-3.5-flash-lite` |
 | `GEMINI_EMBEDDING_MODEL` | Gemini embedding model identifier | `gemini-embedding-001` |
 | `EMBEDDING_DIMENSION` | Dimension produced by the embedding model | `768` |
 | `PINECONE_API_KEY` | Pinecone API key | `pcsk_...` |
